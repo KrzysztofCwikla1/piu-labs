@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lab 1</title>
+    <link rel="stylesheet" href="css/konkurs.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Zgłoszenie do Konkursu Plastycznego</h1>
+      <input type="checkbox" id="dark" hidden />
+      <label for="dark" id="switchmotive" title="Zmień motyw">🌗</label>
+    </header>
+
+    <form action="https://httpbin.org/get" method="get">
+      <label for="name">Imię:</label>
+      <input type="text" name="name" maxlength="30" required /><br />
+      <label for="nazwisko">Nazwisko:</label>
+      <input type="text" name="nazwisko" maxlength="50" required /><br />
+      <label for="email">Email:</label>
+      <input type="email" name="email" required /><br />
+      <label for="city">Miasto:</label>
+      <input
+        type="text"
+        list="cities"
+        name="city"
+        placeholder="Wpisz lub wybierz"
+        required
+      /><br />
+      <datalist id="cities">
+        <option value="Warszawa"></option>
+        <option value="Kraków"></option>
+        <option value="Gdańsk"></option>
+        <option value="Poznań"></option>
+        <option value="Wrocław"></option>
+      </datalist>
+      <label for="birthday">Data urodzenia:</label>
+      <input type="date" name="birthday" required /><br />
+      <label for="commisions">Liczba zgłaszanych prac (od 1 do 6):</label>
+      <input type="number" name="commisions" min="1" max="6" required /><br />
+      <label for="maincolor">Kolor wiodący prac:</label>
+      <input type="color" name="maincolor" required /><br />
+      <label for="category">Kategoria pracy:</label>
+      <select name="category" required>
+        <br />
+        <option value="default">-- wybierz kategorię --</option>
+        <option value="drawing">Rysunek</option>
+        <option value="painting">Malarstwo</option>
+        <option value="digital">Grafika cyfrowa</option>
+      </select>
+      <fieldset class="radio-group" required>
+        <legend>Publikacja pracy online:</legend>
+        <label
+          ><input type="radio" name="onlinepub" value="tak" required />
+          Tak</label
+        >
+        <label><input type="radio" name="onlinepub" value="nie" /> Nie</label>
+      </fieldset>
+      <label
+        ><input
+          type="checkbox"
+          name="agreement"
+          value="agreed"
+          required
+        />Zgadzam się na regulamin konkursu</label
+      >
+      <input type="submit" value="Wyślij zgłoszenie" />
+    </form>
+    <a href=".." id="back">Powrót</a>
+  </body>
+</html>

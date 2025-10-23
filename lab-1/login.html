@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lab 1</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <form action="https://httpbin.org/post" method="post">
+      <label for="uname"><b>Użytkownik</b></label>
+      <input
+        type="text"
+        placeholder="Wprowadź nazwę użytkownika"
+        name="uname"
+        required
+      />
+
+      <label for="psw"><b>Hasło</b></label>
+      <input type="password" placeholder="Wprowadź hasło" name="psw" required />
+
+      <button type="submit">Zaloguj się</button>
+    </form>
+    <a href=".." id="back">Powrót</a>
+  </body>
+</html>

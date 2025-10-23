@@ -4,16 +4,74 @@ html {
   font-family: system-ui, sans-serif; /* font systemowy */
   line-height: 1.5; /* lepsza czytelność */
 }
+nav {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #222;
+}
 body {
   margin: 1rem;
   padding: 0;
 }
+input[type='text'],
+input[type='password'] {
+  display: block;
+  width: 500px;
+  height: 40px;
+  padding: 8px 8px;
+  font-size: 16px;
+  margin-top: 3px;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+}
+button[type='submit'] {
+  display: block;
+  width: 500px;
+  background-color: #2fb344;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px;
+  margin-top: 20px;
+  cursor: pointer;
+}
 
+button[type='submit']:hover {
+  background-color: #45a049;
+}
+form {
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px grey;
+  width: 500px;
+}
 a {
   color: #0066cc; /* niebieski kolor linków */
   text-decoration: none; /* bez podkreślenia */
   font-size: 1.4rem;
+  display: block;
+  padding: 5px;
 }
 a:hover {
   text-decoration: underline; /* podkreślenie przy najechaniu */
+}
+#back {
+  width: 100px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px;
+  margin-top: 20px;
+  cursor: pointer;
+  text-align: center;
 }
