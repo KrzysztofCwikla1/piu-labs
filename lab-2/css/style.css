@@ -8,11 +8,22 @@ body {
   margin: 1rem;
   padding: 0;
 }
+nav {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 
+h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #222;
+}
 a {
   color: #0066cc; /* niebieski kolor linków */
   text-decoration: none; /* bez podkreślenia */
   font-size: 1.4rem;
+  display: block;
+  padding: 5px;
 }
 a:hover {
   text-decoration: underline; /* podkreślenie przy najechaniu */
