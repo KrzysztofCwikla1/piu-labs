@@ -1,0 +1,227 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+}
+fieldset {
+  border-radius: 5px;
+  background-color: #f4f6dc;
+  border: 1px solid #d67f3c;
+  display: flex;
+  margin: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.container {
+  border-radius: 5px;
+  text-align: center;
+  background-color: #f4f6dc;
+  border: 1px solid #d67f3c;
+  display: flex;
+  padding: 15px;
+}
+.item {
+  background-color: blue;
+  color: white;
+  padding: 30px 40px;
+  border-radius: 10px;
+}
+header:has(input[value='blue']:checked) ~ .container {
+  @media (width: 1396px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  @media (width: 1033px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    gap: 20px;
+  }
+  @media (width: 984px) {
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+  }
+  @media (width: 652px) {
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+  }
+}
+header:has(input[value='blue']:checked) ~ .container .item {
+  background-color: blue;
+  @media (width: 1396px) {
+    width: 25%;
+  }
+  @media (width: 1033px) {
+    width: 20%;
+  }
+  @media (width: 984px) {
+    width: 40%;
+  }
+  @media (width: 652px) {
+    width: 40%;
+  }
+}
+header:has(input[value='red']:checked) ~ .container {
+  @media (width: 1396px) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    gap: 20px;
+  }
+  @media (width: 1033px) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    gap: 20px;
+  }
+  @media (width: 984px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  @media (width: 652px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px 10px;
+  }
+}
+
+header:has(input[value='red']:checked) ~ .container .item {
+  background-color: red;
+  @media (width: 1396px) {
+    flex-basis: 50%;
+  }
+  @media (width: 1033px) {
+    flex-basis: 50%;
+  }
+  @media (width: 984px) {
+    flex-basis: 40%;
+  }
+  @media (width: 652px) {
+    flex-basis: 35%;
+  }
+}
+header:has(input[value='red']:checked) ~ .container .item:nth-child(1) {
+  order: 1;
+  flex-basis: 100%;
+  font-weight: bold;
+}
+header:has(input[value='red']:checked) ~ .container .item:nth-child(1)::after {
+  content: '(Jestem większy i na środku!)';
+  display: block;
+  font-weight: normal;
+  font-size: 80%;
+}
+header:has(input[value='red']:checked) ~ .container .item:nth-child(4) {
+  order: 2;
+}
+header:has(input[value='red']:checked) ~ .container .item:nth-child(5) {
+  order: 3;
+}
+header:has(input[value='green']:checked) ~ .container {
+  @media (width: 1396px) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    gap: 20px;
+  }
+  @media (width: 1033px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: end;
+    align-content: space-between;
+    gap: 20px;
+  }
+  @media (width: 984px) {
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    gap: 10px 10px;
+  }
+  @media (width: 652px) {
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    gap: 10px 10px;
+  }
+}
+header:has(input[value='green']:checked) ~ .container .item:nth-child(1) {
+  flex-grow: 5;
+  @media (width: 984px) {
+    width: 80%;
+  }
+  @media (width: 652px) {
+    width: 80%;
+  }
+}
+header:has(input[value='green']:checked) ~ .container .item:nth-child(2) {
+  flex-grow: 4;
+  @media (width: 984px) {
+    width: 65%;
+  }
+  @media (width: 652px) {
+    width: 65%;
+  }
+}
+header:has(input[value='green']:checked) ~ .container .item:nth-child(3) {
+  flex-grow: 3;
+  @media (width: 984px) {
+    width: 50%;
+  }
+  @media (width: 652px) {
+    width: 50%;
+  }
+}
+header:has(input[value='green']:checked) ~ .container .item:nth-child(4) {
+  flex-grow: 2;
+  @media (width: 984px) {
+    width: 35%;
+  }
+  @media (width: 652px) {
+    width: 35%;
+  }
+}
+header:has(input[value='green']:checked) ~ .container .item:nth-child(5) {
+  flex-grow: 0.5;
+  @media (width: 984px) {
+    width: 20%;
+  }
+  @media (width: 652px) {
+    width: 20%;
+  }
+}
+header:has(input[value='green']:checked) ~ .container .item {
+  background-color: green;
+  position: relative;
+}
+header:has(input[value='green']:checked)
+  ~ .container
+  .item:nth-child(1)::before {
+  content: '😀';
+  position: absolute;
+  top: 50%;
+  font-size: 16px;
+  left: 10px;
+  transform: translateY(-50%) scale(2);
+}
+header:has(input[value='green']:checked)
+  ~ .container
+  .item:nth-child(1)::after {
+  content: '😀';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  font-size: 16px;
+  transform: translateY(-50%) scale(2);
+}
