@@ -1,19 +1,166 @@
-/* Minimalny reset  */
-html {
-  font-size: 16px; /* bazowy rozmiar czcionki */
-  font-family: system-ui, sans-serif; /* font systemowy */
-  line-height: 1.5; /* lepsza czytelność */
-}
-body {
-  margin: 1rem;
-  padding: 0;
+main {
+  --img: var(--img);
+  --color-main: var(--color-main);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 30px;
+  width: 800px;
+  padding: 25px;
+  background: #eeeeee;
+  border-radius: 12px;
 }
 
-a {
-  color: #0066cc; /* niebieski kolor linków */
-  text-decoration: none; /* bez podkreślenia */
-  font-size: 1.4rem;
+body {
+  background: white;
+  color: #453a39;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
 }
-a:hover {
-  text-decoration: underline; /* podkreślenie przy najechaniu */
+
+main > figure {
+  background: white;
+  flex: 0 0 60%;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-image: var(--img);
+  background-size: contain;
+  border: 8px solid var(--color-main);
+  border-radius: 12px;
+}
+article > header {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+article > header > span {
+  background: var(--color-main);
+  padding: 4px 10px;
+  color: white;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+article > header > h1 {
+  font-size: 25px;
+  text-align: left;
+  margin-right: 20px;
+}
+
+#color-blue,
+#color-red,
+#color-green,
+#color-yellow {
+  display: none;
+}
+
+#color-blue:checked ~ figure,
+#color-blue:checked ~ article {
+  --img: url('../images/polo_b.png');
+  --color-main: #2465a9;
+}
+
+#color-red:checked ~ figure,
+#color-red:checked ~ article {
+  --img: url('../images/polo_r.png');
+  --color-main: #d33231;
+}
+
+#color-green:checked ~ figure,
+#color-green:checked ~ article {
+  --img: url('../images/polo_g.png');
+  --color-main: #3a8e3e;
+}
+
+#color-yellow:checked ~ figure,
+#color-yellow:checked ~ article {
+  --img: url('../images/polo_y.png');
+  --color-main: #f5c243;
+}
+
+.colors {
+  margin-top: 15px;
+}
+.color {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 3px solid black;
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  margin-bottom: 10px;
+}
+.blue {
+  background: #2465a9;
+}
+.red {
+  background: #d33231;
+}
+.green {
+  background: #3a8e3e;
+}
+.yellow {
+  background: #f5c243;
+}
+
+.sizes input {
+  display: none;
+}
+
+.size {
+  padding: 10px 14px;
+  margin-right: 10px;
+  border: 2px solid black;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.sizes input:checked + label {
+  background: var(--color-main);
+  color: white;
+}
+footer {
+  display: flex;
+  flex-direction: column;
+}
+footer > div {
+  margin-top: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+}
+
+footer > button {
+  align-self: center;
+  margin-top: 20px;
+  background: var(--color-main);
+  color: white;
+  padding: 15px;
+  width: 60%;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
