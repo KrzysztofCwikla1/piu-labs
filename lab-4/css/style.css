@@ -1,19 +1,158 @@
-/* Minimalny reset  */
-html {
-  font-size: 16px; /* bazowy rozmiar czcionki */
-  font-family: system-ui, sans-serif; /* font systemowy */
-  line-height: 1.5; /* lepsza czytelność */
-}
 body {
-  margin: 1rem;
-  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #eef1f6;
+  margin: 0;
+  padding: 20px;
 }
 
-a {
-  color: #0066cc; /* niebieski kolor linków */
-  text-decoration: none; /* bez podkreślenia */
-  font-size: 1.4rem;
+h1 {
+  text-align: center;
 }
-a:hover {
-  text-decoration: underline; /* podkreślenie przy najechaniu */
+
+#board {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.column {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  width: 30%;
+  box-shadow: 0 0 10px #bbb;
+}
+
+.cards {
+  margin-top: 15px;
+  min-height: 40px;
+}
+
+.card {
+  background: #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.card[contenteditable='true'] {
+  outline: none;
+}
+
+button {
+  margin: 5px 0;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #3b6cf3;
+  color: white;
+}
+
+button:hover {
+  background: #2f55c9;
+}
+
+.card .remove {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.card .move {
+  display: inline-block;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.count {
+  font-size: 0.8em;
+  color: #555;
+}
+@media (max-width: 800px) {
+  #board {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+  }
+
+  .card {
+    font-size: 1em;
+  }
+
+  h2 {
+    text-align: center;
+  }
+}
+
+@media (min-width: 1400px) {
+  #board {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .column {
+    padding: 20px;
+  }
+
+  .card {
+    padding: 14px;
+  }
+
+  button {
+    font-size: 0.95em;
+    padding: 8px 12px;
+  }
+}
+.card .move {
+  display: inline-block;
+  padding: 2px 6px;
+  margin-left: 6px;
+  font-weight: bold;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.1);
+  transition: background 0.2s;
+}
+
+.card .move:hover {
+  background: rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.card .remove {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font-weight: bold;
+  background: #ff4c4c;
+  color: white;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8em;
+  transition: background 0.2s;
+}
+
+.card .remove:hover {
+  background: #d63a3a;
+  cursor: pointer;
+}
+.card .text {
+  max-width: 200px;
+  word-wrap: break-word;
 }
